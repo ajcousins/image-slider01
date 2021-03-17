@@ -1,0 +1,182 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  background-color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 0;
+}
+
+.navBar {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  border-bottom: solid 1px #ececec;
+}
+
+.menuButton {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  margin: 10px 40px 10px 10px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.lineA {
+  position: absolute;
+  top: 23px;
+  left: 10px;
+  background-color: #757575;
+  height: 3px;
+  width: 50px;
+  transition: transform 300ms ease-in-out;
+}
+
+.lineB {
+  position: absolute;
+  top: 46px;
+  left: 10px;
+  background-color: #757575;
+  height: 3px;
+  width: 50px;
+  transition: transform 300ms ease-in-out;
+}
+
+.menuButton.clicked .lineA {
+  transform: translate(0px, 11px) rotate(45deg);
+}
+
+.menuButton.clicked .lineB {
+  transform: translate(0px, -11px) rotate(-45deg);
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 5px;
+  top: 100px;
+  background-color: rgb(255, 93, 93);
+  width: 150px;
+  visibility: hidden;
+  opacity: 0%;
+  transition: opacity 300ms ease-in-out;
+  box-shadow: 0px 10px 8px -5px rgba(0, 0, 0, 0.2) inset,
+    -8px 10px 8px -5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.menuItem {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  margin: 0px;
+  padding: 12px 3px 12px 3px;
+  text-align: center;
+  z-index: 1;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 100%;
+}
+
+.menuItem:hover {
+  background-color: #ffe365;
+}
+
+/** IMAGE SLIDER **/
+
+img.slides {
+  width: 600px;
+}
+
+.carousel-container {
+  position: absolute;
+  top: 20%;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border: 5px solid rgb(255, 20, 20);
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  border: 3px solid rgb(20, 36, 255);
+  height: 500px;
+}
+
+.btnContainer {
+  background-color: #161616;
+  position: absolute;
+  width: 100%;
+  height: 650px;
+  top: 15%;
+  z-index: -5;
+}
+
+.btn {
+  opacity: 50%;
+  display: flex;
+}
+
+.btnArea {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 150px;
+}
+
+.prev {
+  position: absolute;
+  display: flex;
+  left: 0;
+}
+.btnArea:hover {
+  position: absolute;
+  background-color: #3f3f3f;
+}
+
+.next {
+  position: absolute;
+  display: flex;
+  right: 0;
+}
+
+/*** MEDIA SCREEN ***/
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100%;
+    opacity: 0%;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    top: 0px;
+    box-shadow: none;
+    border-bottom: solid 1px #ececec;
+  }
+
+  .menuItem {
+    padding: 8%;
+  }
+
+  .visible {
+    visibility: visible;
+    opacity: 100%;
+    transform: translate(0px, 100px);
+  }
+}
