@@ -96,39 +96,38 @@ body {
 
 /** IMAGE SLIDER **/
 
-img.slides {
-  width: 600px;
-}
-
 .carousel-container {
   position: absolute;
   top: 20%;
-  width: 600px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  border: 5px solid rgb(255, 20, 20);
+  padding-bottom: 30px;
   overflow: hidden;
 }
 
 .carousel-slide {
   display: flex;
-  border: 3px solid rgb(20, 36, 255);
-  height: 500px;
+  height: 533px;
+}
+
+.moveAnimation {
+  transition: transform 0.4s ease-in-out;
 }
 
 .btnContainer {
   background-color: #161616;
   position: absolute;
   width: 100%;
-  height: 650px;
-  top: 15%;
+  height: 100%;
+
   z-index: -5;
 }
 
 .btn {
-  opacity: 50%;
+  opacity: 10%;
   display: flex;
 }
 
@@ -150,13 +149,43 @@ img.slides {
 }
 .btnArea:hover {
   position: absolute;
-  background-color: #3f3f3f;
+  background-color: #242424;
 }
 
 .next {
   position: absolute;
   display: flex;
   right: 0;
+}
+
+.radioContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: 5%;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.radioBtn {
+  cursor: pointer;
+  margin: 10px;
+  height: 15px;
+  width: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.checked {
+  transform: scale(1.3);
+  background-color: white;
+}
+
+.radioBtn:hover {
+  transform: scale(1.3);
 }
 
 /*** MEDIA SCREEN ***/
